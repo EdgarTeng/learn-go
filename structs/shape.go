@@ -1,6 +1,12 @@
 package structs
 
+// Rectangle is one of shapes
+type Rectangle struct{
+	Width float64
+	Height float64
+}
+
 // Primeter is used for compute of shape's primeter
-func Primeter(width, height float64) float64 {
-	return (width + height) * 2
+func Primeter(rectangle Rectangle) float64 {
+	return (rectangle.Width + rectangle.Height) * 2
 }
