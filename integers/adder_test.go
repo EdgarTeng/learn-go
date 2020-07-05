@@ -4,9 +4,13 @@ import "testing"
 
 func TestAdd(t *testing.T) {
 	//define expect & actual
-	got := Add(1,2)
-	want := 3
-	if got != want {
-		t.Errorf("got '%q', want '%q'", got, want)
+	actual := Add(1, 2)
+	expect := 3
+	assertEquals(t, actual, expect)
+}
+
+func assertEquals(t *testing.T, actual, expect interface{}) {
+	if actual != expect {
+		t.Errorf("actual '%d', expect '%d'", actual, expect)
 	}
 }
