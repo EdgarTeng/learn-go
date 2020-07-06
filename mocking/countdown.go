@@ -1,8 +1,9 @@
-package mocking
+package main
 
 import (
 	"fmt"
 	"io"
+	"os"
 )
 
 // Countdown means count to 0
@@ -11,4 +12,8 @@ func Countdown(writer io.Writer) {
 		fmt.Fprintln(writer, i)
 	}
 	fmt.Fprint(writer, "GO!")
+}
+
+func main() {
+	Countdown(os.Stdout)
 }
