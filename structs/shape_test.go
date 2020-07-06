@@ -15,10 +15,18 @@ func TestPrimeter(t *testing.T) {
 }
 
 func TestArea(t *testing.T) {
-	circle := Circle{10.0}
-	actual := circle.Area()
-	expect := 100 * math.Pi
-	if actual != expect {
-		t.Errorf("actual '%.2f', but expect '%.2f'", actual, expect)
+	areaTest := []struct {
+		shape Shape
+		want  float64
+	}{
+		{Rectangle{10.0, 20.0}, 200.0},
+		{Circle{10.0}, 100 * math.Pi},
+	}
+
+	for _, tt := range areaTest {
+		got := tt.shape.Area()
+		if got != tt.want {
+			t.Errorf("got %.2f want %.2f", got, tt.want)
+		}
 	}
 }

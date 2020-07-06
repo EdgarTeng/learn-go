@@ -20,11 +20,21 @@ type Circle struct {
 }
 
 // Primeter of Rectangle
-func (r *Rectangle) Primeter() float64 {
+func (r Rectangle) Primeter() float64 {
 	return (r.Width + r.Height) * 2
 }
 
 // Area of circle
-func (c *Circle) Area() float64 {
+func (c Circle) Area() float64 {
 	return c.Radius * c.Radius * math.Pi
+}
+
+// Primeter of Rectangle
+func (c Circle) Primeter() float64 {
+	return c.Radius * math.Pi * 2
+}
+
+// Area of circle
+func (r Rectangle) Area() float64 {
+	return r.Width * r.Height
 }
