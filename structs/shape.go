@@ -25,6 +25,11 @@ func (r Rectangle) Primeter() float64 {
 }
 
 // Area of circle
+func (r Rectangle) Area() float64 {
+	return r.Width * r.Height
+}
+
+// Area of circle
 func (c Circle) Area() float64 {
 	return c.Radius * c.Radius * math.Pi
 }
@@ -32,9 +37,4 @@ func (c Circle) Area() float64 {
 // Primeter of Rectangle
 func (c Circle) Primeter() float64 {
 	return c.Radius * math.Pi * 2
-}
-
-// Area of circle
-func (r Rectangle) Area() float64 {
-	return r.Width * r.Height
 }
