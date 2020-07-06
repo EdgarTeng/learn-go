@@ -1,16 +1,22 @@
-package main
+package mocking
 
 import (
 	"bytes"
 	"testing"
 )
 
-func TestGreet(t *testing.T) {
-	t.Run("word exist in dict", func(t *testing.T) {
-		writer := &bytes.Buffer{}
-		Greet(writer, "Ken")
-		actual := writer.String()
-		expect := "Hello, Ken"
+func TestCountdown(t *testing.T) {
+
+	t.Run("count down", func(t *testing.T) {
+		buffer := &bytes.Buffer{}
+		Countdown(buffer)
+
+		actual := buffer.String()
+		expect := `3
+2
+1
+GO!`
+
 		assertMessageEquals(t, actual, expect)
 	})
 
