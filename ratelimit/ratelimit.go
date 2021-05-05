@@ -13,7 +13,7 @@ var (
 )
 
 func init() {
-	tokenBucket = rate.NewLimiter(1e4, 1e4)
+	tokenBucket = rate.NewLimiter(2, 5)
 	leakyBucket = ratelimit.New(1)
 }
 

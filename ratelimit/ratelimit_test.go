@@ -41,7 +41,10 @@ func TestAllow(t *testing.T) {
 			case <-ctx.Done():
 				return
 			default:
-				t.Log(Allow(), time.Now())
+				if allow := Allow(); allow {
+					t.Log(time.Now())
+				}
+
 			}
 
 		}
